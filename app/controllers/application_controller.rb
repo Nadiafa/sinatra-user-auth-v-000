@@ -16,8 +16,11 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/registrations' do
-    puts params
+    @user = User.new(params)
+    @user.save
+    session[:id] = @user.id
     
+    redirect '/users/home'
   end
 
   get '/sessions/login' do
