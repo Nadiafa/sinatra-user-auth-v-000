@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/registrations' do
-    
+    pust params
     redirect '/users/home'
   end
 
